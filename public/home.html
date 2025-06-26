@@ -1,65 +1,243 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JL Poker</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>JL Poker - Sua Mesa Virtual</title>
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <div class="header-container">
-            <img src="./assets/fotos/logobranca.png" alt="logo" class="logo">
-            <h1>𝑷𝒐𝒌𝒆𝒓</h1>
-            <nav class="mode-nav">
-                <a href="#" class="mode">Modo 1</a>
-                <a href="#" class="mode">Modo 2</a>
-                <a href="#" class="mode">Modo 3</a>
-                <a href="#" class="mode">4</a>
-                <a href="#" class="mode">5</a>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-spade"></i>
+                <img src="./assets/fotos/logobranca.png" alt="logo" class="logo">
+                <h1>𝑷𝒐𝒌𝒆𝒓</h1>
+            </div>
+            <nav class="nav-tabs">
+                <button class="nav-tab active" data-mode="1">Modo 1</button>
+                <button class="nav-tab" data-mode="2">Modo 2</button>
+                <button class="nav-tab" data-mode="3">Modo 3</button>
+                <button class="nav-tab" data-mode="4">4</button>
+                <button class="nav-tab" data-mode="5">5</button>
             </nav>
-        </div>
-    </header>
-    <div class="content-wrapper">
-        <main class="container">
-            <div class="carousel">
-                <div class="carousel-item">Carrossel bootstrap</div>
-            </div>
-            <section class="recent-games">
-                <h2>Jogados Recente</h2>
-                <div class="game-grid">
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                </div>
-            </section>
-            <section class="top-games">
-                <h2>Em Alta</h2>
-                <div class="game-grid">
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                    <div class="game-card"></div>
-                </div>
-            </section>
-        </main>
-        <aside class="sidebar">
-            <div class="profile-section">
-                <div class="profile-photo">Foto</div>
-                <div class="profile-info">
-                    <p>usuário: Jogador123</p>
-                    <p>dinheiro: $100</p>
-                    <p>moeda: 50 moedas</p>
-                    <p>ingresso de torneio: 1</p>
-                    <p>carteira: Ativa</p>
-                </div>
-            </div>
-        </aside>
-    </div>
-    <script src="./assets/js/app.js"></script>
-</body>
+        </header>
 
+        <div class="main-content">
+            <!-- Left Content -->
+            <div class="content-left">
+                <!-- Carousel Section -->
+                <section class="carousel-section">
+                    <div class="carousel-container">
+                        <button class="carousel-btn prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel">
+                            <div class="carousel-slide active">
+                                <div class="slide-content">
+                                    <h2>Torneio de Poker Texas Hold'em</h2>
+                                    <p>Participe do maior torneio da semana com prêmio de R$ 50.000</p>
+                                    <button class="btn-primary">Inscrever-se</button>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="slide-content">
+                                    <h2>Mesa VIP Exclusiva</h2>
+                                    <p>Acesso exclusivo para jogadores premium com apostas altas</p>
+                                    <button class="btn-primary">Entrar na Mesa</button>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="slide-content">
+                                    <h2>Bônus de Boas-vindas</h2>
+                                    <p>Receba 100% de bônus no seu primeiro depósito até R$ 1.000</p>
+                                    <button class="btn-primary">Resgatar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-btn next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                    </div>
+                </section>
+
+                <!-- Recently Played Section -->
+                <section class="games-section">
+                    <div class="section-header">
+                        <h3>Jogados Recentemente</h3>
+                        <div>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="games-grid" id="recent-games">
+                        <div class="game-card">
+                            <div class="game-image">
+                                <i class="fas fa-cards-blank"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Texas Hold'em</h4>
+                                <p>Mesa: High Stakes</p>
+                                <span class="game-status">Última sessão: 2h</span>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-image">
+                                <i class="fas fa-diamond"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Omaha Poker</h4>
+                                <p>Mesa: Iniciante</p>
+                                <span class="game-status">Última sessão: 4h</span>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-image">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Seven Card Stud</h4>
+                                <p>Mesa: Médio</p>
+                                <span class="game-status">Última sessão: 1d</span>
+                            </div>
+                        </div>
+                        <div class="game-card">
+                            <div class="game-image">
+                                <i class="fas fa-club"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Five Card Draw</h4>
+                                <p>Mesa: VIP</p>
+                                <span class="game-status">Última sessão: 2d</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trending Section -->
+                <section class="games-section">
+                    <div class="section-header">
+                        <h3>Em Alta</h3>
+                        <div>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="games-grid" id="trending-games">
+                        <div class="game-card trending">
+                            <div class="game-image">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Torneio Sit & Go</h4>
+                                <p>Prêmio: R$ 5.000</p>
+                                <span class="game-status hot">🔥 Muito Popular</span>
+                            </div>
+                        </div>
+                        <div class="game-card trending">
+                            <div class="game-image">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Mesa Turbo</h4>
+                                <p>Blinds rápidos</p>
+                                <span class="game-status hot">⚡ Ação Rápida</span>
+                            </div>
+                        </div>
+                        <div class="game-card trending">
+                            <div class="game-image">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="game-info">
+                                <h4>Cash Game Pro</h4>
+                                <p>Stakes altos</p>
+                                <span class="game-status hot">💎 Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Casino Section -->
+                <div class="casino-label">
+                    <i class="fas fa-dice"></i>
+                    <span>Casino</span>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <h4>Usuário</h4>
+                        <div class="user-stats">
+                            <div class="stat-item">
+                                <i class="fas fa-coins"></i>
+                                <span>Dinheiro</span>
+                                <strong>R$ 12.450</strong>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-medal"></i>
+                                <span>Moeda</span>
+                                <strong>850 JLP</strong>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-ticket-alt"></i>
+                                <span>Ingresso de Torneio</span>
+                                <strong>3 disponíveis</strong>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-wallet"></i>
+                                <span>Carteira</span>
+                                <strong>Conectada</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="action-btn deposit">
+                        <i class="fas fa-plus"></i>
+                        Depositar
+                    </button>
+                    <button class="action-btn withdraw">
+                        <i class="fas fa-minus"></i>
+                        Sacar
+                    </button>
+                </div>
+
+                <div class="achievements">
+                    <h4>Conquistas Recentes</h4>
+                    <div class="achievement-item">
+                        <i class="fas fa-crown"></i>
+                        <span>Rei da Mesa</span>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Sequência de Vitórias</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="/./public/assets/js/app.js"></script>
+</body>
 </html>
