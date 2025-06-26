@@ -1,27 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JL Poker</title>
-  <link rel="stylesheet" href="/public/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JL Poker</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  <header>
-    <img src="./assets/fotos/logo.png" alt="logo" class="logo">
-    <div class="container">
-      <h1>JL Poker</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Mesas</a>
-      </nav>
+    <header>
+        <div class="header-container">
+            <img src="./assets/fotos/logobranca.png" alt="logo" class="logo">
+            <h1>𝑷𝒐𝒌𝒆𝒓</h1>
+            <nav class="mode-nav">
+                <a href="#" class="mode">Modo 1</a>
+                <a href="#" class="mode">Modo 2</a>
+                <a href="#" class="mode">Modo 3</a>
+                <a href="#" class="mode">4</a>
+                <a href="#" class="mode">5</a>
+            </nav>
+        </div>
+    </header>
+    <div class="content-wrapper">
+        <main class="container">
+            <div class="carousel">
+                <div class="carousel-item">Carrossel bootstrap</div>
+            </div>
+            <section class="recent-games">
+                <h2>Jogados Recente</h2>
+                <div class="game-grid">
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                </div>
+            </section>
+            <section class="top-games">
+                <h2>Em Alta</h2>
+                <div class="game-grid">
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                    <div class="game-card"></div>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo">Foto</div>
+                <div class="profile-info">
+                    <p>usuário: Jogador123</p>
+                    <p>dinheiro: $100</p>
+                    <p>moeda: 50 moedas</p>
+                    <p>ingresso de torneio: 1</p>
+                    <p>carteira: Ativa</p>
+                </div>
+            </div>
+        </aside>
     </div>
-  </header>
-  <main class="container">
-    <div class="game-cards">
-      <!-- Caixinhas de jogos aqui -->
-    </div>
-  </main>
-  <script src="/public/assets/js/app.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
+
 </html>

@@ -17,3 +17,25 @@ games.forEach(game => {
   `;
   gameCards.appendChild(card);
 });
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('JL Poker carregado!');
+
+    // Interatividade dos modos na navbar
+    const modes = document.querySelectorAll('.mode');
+    modes.forEach(mode => {
+        mode.addEventListener('click', (event) => {
+            event.preventDefault();
+            alert(`Modo ${mode.textContent} selecionado! (Funcionalidade a ser implementada)`);
+        });
+    });
+
+    // Simulação simples de carrossel (alternar conteúdo)
+    const carousel = document.querySelector('.carousel');
+    let currentItem = 0;
+    const items = ['Carrossel 1', 'Carrossel 2', 'Carrossel 3']; // Exemplo de itens
+
+    setInterval(() => {
+        currentItem = (currentItem + 1) % items.length;
+        carousel.textContent = items[currentItem];
+    }, 3000); // Troca a cada 3 segundos
+});
