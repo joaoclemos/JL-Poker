@@ -78,7 +78,7 @@ body {
     box-shadow: 0 4px 12px rgba(15, 123, 60, 0.3);
 }
 
-.main-content {
+.conteudo-principal {
     display: grid;
     grid-template-columns: 1fr 320px;
     gap: 30px;
@@ -210,7 +210,7 @@ body {
     transform: scale(1.2);
 }
 
-.games-section {
+.section-jogos {
     margin-bottom: 40px;
 }
 
@@ -244,7 +244,7 @@ body {
     color: #d4af37;
 }
 
-.games-grid {
+.grid-jogos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
@@ -253,11 +253,11 @@ body {
     scrollbar-width: none;
 }
 
-.games-grid::-webkit-scrollbar {
+.grid-jogos::-webkit-scrollbar {
     display: none;
 }
 
-.game-card {
+.card-jogos {
     background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
     border-radius: 12px;
     padding: 20px;
@@ -269,39 +269,39 @@ body {
     min-width: 280px;
 }
 
-.game-card:hover {
+.card-jogos:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border-color: #0f7b3c;
 }
 
-.game-card.trending {
+.card-jogos.trending {
     border-color: #d4af37;
     box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
 }
 
-.game-card.trending:hover {
+.card-jogos.trending:hover {
     border-color: #f4e4bc;
     box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
 }
 
-.game-image {
+.imagem-jogo {
     text-align: center;
     margin-bottom: 16px;
 }
 
-.game-image i {
+.imagem-jogo i {
     font-size: 48px;
     color: #0f7b3c;
     transition: all 0.3s ease;
 }
 
-.game-card:hover .game-image i {
+.card-jogos:hover .imagem-jogo i {
     color: #15a049;
     transform: scale(1.1);
 }
 
-.game-card.trending .game-image i {
+.card-jogos.trending .imagem-jogo i {
     color: #d4af37;
 }
 
@@ -487,7 +487,7 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .main-content {
+    .conteudo-principal {
         grid-template-columns: 1fr;
         gap: 20px;
     }
@@ -545,7 +545,7 @@ body {
         font-size: 16px;
     }
     
-    .games-grid {
+    .grid-jogos {
         grid-template-columns: 1fr;
     }
     
@@ -577,7 +577,7 @@ body {
         right: 10px;
     }
     
-    .game-card {
+    .card-jogos {
         padding: 16px;
     }
     
