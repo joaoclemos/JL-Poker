@@ -1,5 +1,5 @@
 // Simula dados de usuário (futuro: carregar de JSON ou backend)
-const userData = {
+let userData = {
     name: "João",
     money: 15420.50,
     coins: 1200,
@@ -21,7 +21,7 @@ function updateUserSidebar() {
     document.getElementById('user-wallet').textContent = userData.wallet;
 }
 
-// Função para gerar jogos recentes com base nas últimas páginas acessadas
+// Função para gerar jogos recentes
 function updateRecentGames() {
     const recentGamesContainer = document.getElementById('jogos-recentes');
     const games = Object.keys(userData.lastPlayed);
@@ -42,6 +42,12 @@ function updateRecentGames() {
         `;
         recentGamesContainer.appendChild(card);
     });
+}
+
+// Função de logout
+function logout() {
+    alert('Logout realizado com sucesso! Redirecionando para a página de login...');
+    window.location.href = '/public/assets/html/login.html';
 }
 
 // Carousel functionality

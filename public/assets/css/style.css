@@ -1,4 +1,4 @@
-/* Reseta margens, paddings e define box-sizing como border-box para todos os elementos */
+/* Reseta margens, paddings e define box-sizing como border-box */
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +19,33 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
+}
+
+/* Logout Button */
+.logout-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logout-btn {
+    background: linear-gradient(45deg, #d4af37, #f4e4bc);
+    color: #1a1a1a;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
 /* Estiliza o header com layout ajustado */
@@ -456,11 +483,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-}
-
-.action-btn.login {
-    background: linear-gradient(45deg, #0f7b3c, #15a049);
-    color: white;
 }
 
 .action-btn.deposit {

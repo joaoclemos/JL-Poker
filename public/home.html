@@ -9,6 +9,12 @@
 </head>
 <body>
     <div class="container">
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
+        </div>
         <!-- Header -->
         <header class="header">
             <div class="logo">
@@ -193,12 +199,6 @@
 
             <!-- Right Sidebar -->
             <aside class="sidebar" id="user-sidebar">
-                <div class="quick-actions">
-                    <button class="action-btn login" onclick="window.location.href='/public/assets/html/login.html'">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Login
-                    </button>
-                </div>
                 <div class="perfil-usuario" id="perfil-usuario">
                     <div class="foto-usuario">
                         <i class="fas fa-user"></i>
