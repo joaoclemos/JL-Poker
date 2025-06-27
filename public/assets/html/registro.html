@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - JL Poker</title>
+    <link rel="stylesheet" href="/public/assets/css/login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <i class="fas fa-spade"></i>
+            <img src="/public/assets/fotos/logobranca.png" alt="logo" class="logo-img">
+            <h1>𝑷𝒐𝒌𝒆𝒓</h1>
+        </div>
+        <h2>Registro</h2>
+        <form id="register-form">
+            <label for="username">Nome de usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirmar Senha:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <button type="submit">Registrar</button>
+        </form>
+        <div class="login-options">
+            <a href="/login.html" id="back-to-login">Voltar para Login</a>
+        </div>
+    </div>
+    <script src="/public/assets/js/registro.js"></script>
+</body>
+</html>

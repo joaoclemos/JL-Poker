@@ -27,6 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         alert('Redirecionando para a página de registro...');
         // Aqui você pode redirecionar para /register.html ou outra página de registro
-        window.location.href = '/register.html';
+        window.location.href = '/public/assets/html/registro.html';
     });
 });
