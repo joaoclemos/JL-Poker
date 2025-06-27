@@ -305,25 +305,25 @@ body {
     color: #d4af37;
 }
 
-.game-info h4 {
+.jogo-info h4 {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
     color: #ffffff;
 }
 
-.game-info p {
+.jogo-info p {
     color: #cccccc;
     margin-bottom: 8px;
 }
 
-.game-status {
+.jogo-status {
     font-size: 12px;
     color: #888888;
     font-weight: 500;
 }
 
-.game-status.hot {
+.jogo-status.hot {
     color: #d4af37;
     font-weight: 600;
 }
@@ -354,14 +354,14 @@ body {
     top: 20px;
 }
 
-.user-profile {
+.perfil-usuario {
     text-align: center;
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #404040;
 }
 
-.user-avatar {
+.foto-usuario {
     width: 80px;
     height: 80px;
     background: linear-gradient(45deg, #0f7b3c, #15a049);
@@ -373,19 +373,19 @@ body {
     box-shadow: 0 4px 16px rgba(15, 123, 60, 0.3);
 }
 
-.user-avatar i {
+.foto-usuario i {
     font-size: 32px;
     color: white;
 }
 
-.user-info h4 {
+.info-usuario h4 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 16px;
     color: #ffffff;
 }
 
-.user-stats {
+.stats-usuario {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -452,12 +452,12 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.achievements {
+.conquistas {
     padding-top: 24px;
     border-top: 1px solid #404040;
 }
 
-.achievements h4 {
+.conquistas h4 {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 16px;
@@ -484,108 +484,4 @@ body {
     justify-content: center;
     color: white;
     font-size: 1.5rem;
-}
-
-@media (max-width: 1024px) {
-    .conteudo-principal {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .sidebar {
-        position: static;
-        margin-top: 20px;
-    }
-    
-    .casino-label {
-        position: static;
-        display: inline-flex;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 16px;
-    }
-    
-    .header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    .nav-tabs {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nav-tab {
-        padding: 10px 16px;
-        font-size: 14px;
-    }
-    
-    .logo h1 {
-        font-size: 24px;
-    }
-    
-    .carousel-container {
-        height: 250px;
-    }
-    
-    .slide-content {
-        padding: 20px;
-    }
-    
-    .slide-content h2 {
-        font-size: 24px;
-    }
-    
-    .slide-content p {
-        font-size: 16px;
-    }
-    
-    .grid-jogos {
-        grid-template-columns: 1fr;
-    }
-    
-    .section-header {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-    }
-    
-    .user-stats {
-        gap: 8px;
-    }
-    
-    .stat-item {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-btn {
-        padding: 12px;
-    }
-    
-    .carousel-btn.prev {
-        left: 10px;
-    }
-    
-    .carousel-btn.next {
-        right: 10px;
-    }
-    
-    .card-jogos {
-        padding: 16px;
-    }
-    
-    .sidebar {
-        padding: 20px;
-    }
-    
-    .quick-actions {
-        flex-direction: column;
-    }
 }

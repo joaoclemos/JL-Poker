@@ -106,11 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    setupSectionScrolling('recent-games');
+    setupSectionScrolling('jogos-recentes');
     setupSectionScrolling('trending-games');
     
     // Achievement animations
-    const achievementItems = document.querySelectorAll('.achievement-item');
+    const achievementItems = document.querySelectorAll('.item-conquistas');
     achievementItems.forEach(item => {
         item.addEventListener('mouseenter', function() {
             this.style.transform = 'translateX(8px)';
