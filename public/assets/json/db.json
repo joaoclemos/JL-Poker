@@ -1,0 +1,30 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "João",
+            "money": 15420.50,
+            "coins": 1200,
+            "tickets": 5,
+            "wallet": "Conectada",
+            "lastPlayed": {
+                "Texas Hold'em": "1h",
+                "Omaha Poker": "3h",
+                "Seven Card Stud": "1d"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Maria",
+            "money": 8500.75,
+            "coins": 500,
+            "tickets": 2,
+            "wallet": "Desconectada",
+            "lastPlayed": {
+                "Sit & Go": "2h",
+                "PLO": "5h",
+                "Torneio": "2d"
+            }
+        }
+    ]
+}

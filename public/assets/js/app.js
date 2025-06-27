@@ -1,138 +1,123 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Carousel functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const totalSlides = slides.length;
-    
-    function showSlide(n) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        currentSlide = (n + totalSlides) % totalSlides;
-        
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
+// Simula dados de usuário (futuro: carregar de JSON ou backend)
+const userData = {
+    name: "João",
+    money: 15420.50,
+    coins: 1200,
+    tickets: 5,
+    wallet: "Conectada",
+    lastPlayed: {
+        "Texas Hold'em": "1h",
+        "Omaha Poker": "3h",
+        "Seven Card Stud": "1d"
     }
-    
-    function nextSlide() {
-        showSlide(currentSlide + 1);
-    }
-    
-    function previousSlide() {
-        showSlide(currentSlide - 1);
-    }
-    
-    // Add event listeners to carousel buttons
-    document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
-    document.querySelector('.carousel-btn.prev').addEventListener('click', previousSlide);
-    
-    // Add event listeners to indicators
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => showSlide(index));
+};
+
+// Função para atualizar a sidebar com dados do usuário
+function updateUserSidebar() {
+    document.getElementById('user-name').textContent = userData.name;
+    document.getElementById('user-money').textContent = `R$ ${userData.money.toFixed(2)}`;
+    document.getElementById('user-coins').textContent = `${userData.coins} JLP`;
+    document.getElementById('user-tickets').textContent = `${userData.tickets} disponíveis`;
+    document.getElementById('user-wallet').textContent = userData.wallet;
+}
+
+// Função para gerar jogos recentes com base nas últimas páginas acessadas
+function updateRecentGames() {
+    const recentGamesContainer = document.getElementById('jogos-recentes');
+    const games = Object.keys(userData.lastPlayed);
+    recentGamesContainer.innerHTML = '';
+
+    games.forEach(game => {
+        const card = document.createElement('div');
+        card.className = 'card-jogos';
+        card.innerHTML = `
+            <div class="imagem-jogo">
+                <i class="fas fa-cards-blank"></i>
+            </div>
+            <div class="jogo-info">
+                <h4>${game}</h4>
+                <p>Mesa: ${game.includes('Hold') ? 'High Stakes' : game.includes('Omaha') ? 'Iniciante' : 'Médio'}</p>
+                <span class="jogo-status">Última sessão: ${userData.lastPlayed[game]}</span>
+            </div>
+        `;
+        recentGamesContainer.appendChild(card);
     });
-    
-    // Auto-play carousel
-    let autoSlideInterval = setInterval(nextSlide, 5000);
-    
-    // Pause auto-play on hover
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        });
-    }
-    
-    // Navigation tabs functionality
-    const navTabs = document.querySelectorAll('.nav-tab');
-    navTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            navTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-        });
+}
+
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const indicators = document.querySelectorAll('.indicator');
+const totalSlides = slides.length;
+
+function showSlide(n) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    currentSlide = (n + totalSlides) % totalSlides;
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function previousSlide() {
+    showSlide(currentSlide - 1);
+}
+
+document.querySelector('.carousel-btn.next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-btn.prev').addEventListener('click', previousSlide);
+
+indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => showSlide(index));
+});
+
+let autoSlideInterval = setInterval(nextSlide, 5000);
+
+const carouselContainer = document.querySelector('.carousel-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    carouselContainer.addEventListener('mouseleave', () => autoSlideInterval = setInterval(nextSlide, 5000));
+}
+
+// Navigation tabs functionality
+const navTabs = document.querySelectorAll('.nav-tab');
+navTabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+        navTabs.forEach(t => t.classList.remove('active'));
+        this.classList.add('active');
     });
-    
-    // Game card interactions
-    const gameCards = document.querySelectorAll('.game-card');
-    gameCards.forEach(card => {
-        card.addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
-    
-    // Quick action buttons
-    document.querySelector('.action-btn.deposit')?.addEventListener('click', function() {
-        alert('Funcionalidade de depósito será implementada em breve!');
-    });
-    
-    document.querySelector('.action-btn.withdraw')?.addEventListener('click', function() {
-        alert('Funcionalidade de saque será implementada em breve!');
-    });
-    
-    // Primary buttons functionality
-    document.querySelectorAll('.btn-primary').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const btnText = this.textContent;
-            if (btnText.includes('Inscrever')) {
-                alert('Inscrição no torneio iniciada!');
-            } else if (btnText.includes('Entrar')) {
-                alert('Entrando na mesa VIP...');
-            } else if (btnText.includes('Resgatar')) {
-                alert('Bônus resgatado com sucesso!');
-            }
-        });
-    });
-    
-    // Section scrolling
-    function setupSectionScrolling(sectionId) {
-        const container = document.getElementById(sectionId);
+});
+
+// Section scrolling
+function setupSectionScrolling(sectionId) {
+    const container = document.getElementById(sectionId);
+    if (container) {
         const leftBtn = container.previousElementSibling.querySelector('.section-nav-btn:first-child');
         const rightBtn = container.previousElementSibling.querySelector('.section-nav-btn:last-child');
-        
-        leftBtn.addEventListener('click', () => {
-            container.scrollBy({ left: -300, behavior: 'smooth' });
-        });
-        
-        rightBtn.addEventListener('click', () => {
-            container.scrollBy({ left: 300, behavior: 'smooth' });
-        });
+        leftBtn.addEventListener('click', () => container.scrollBy({ left: -300, behavior: 'smooth' }));
+        rightBtn.addEventListener('click', () => container.scrollBy({ left: 300, behavior: 'smooth' }));
     }
-    
-    setupSectionScrolling('jogos-recentes');
-    setupSectionScrolling('trending-games');
-    
-    // Achievement animations
-    const achievementItems = document.querySelectorAll('.item-conquistas');
-    achievementItems.forEach(item => {
-        item.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(8px)';
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            this.style.transform = '';
-        });
+}
+
+setupSectionScrolling('jogos-recentes');
+
+// Quick actions
+document.querySelector('.action-btn.deposit')?.addEventListener('click', () => alert('Funcionalidade de depósito será implementada!'));
+document.querySelector('.action-btn.withdraw')?.addEventListener('click', () => alert('Funcionalidade de saque será implementada!'));
+
+document.querySelectorAll('.btn-primary').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const btnText = this.textContent;
+        if (btnText.includes('Inscrever')) alert('Inscrição no torneio iniciada!');
+        else if (btnText.includes('Entrar')) alert('Entrando na mesa VIP...');
+        else if (btnText.includes('Resgatar')) alert('Bônus resgatado!');
     });
-    
-    // User stats animation on load
-    const statItems = document.querySelectorAll('.stat-item');
-    statItems.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-                item.style.transition = 'all 0.5s ease';
-            }, 100);
-        }, index * 150);
-    });
+});
+
+// Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+    updateUserSidebar();
+    updateRecentGames();
 });

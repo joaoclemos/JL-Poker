@@ -1,13 +1,11 @@
-/* style.css */
-
-/* Reseta margens, paddings e define box-sizing como border-box para todos os elementos, garantindo consistência no layout */
+/* Reseta margens, paddings e define box-sizing como border-box para todos os elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define a fonte, fundo gradiente, cor do texto, altura mínima e padding do corpo da página */
+/* Define a fonte, fundo gradiente, cor do texto, altura mínima e padding do corpo */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #0f1419 0%, #1a1a1a 100%);
@@ -17,43 +15,40 @@ body {
     padding: 20px;
 }
 
-/* Define a largura máxima do contêiner principal e centraliza-o horizontalmente */
+/* Define a largura máxima do contêiner principal e centraliza-o */
 .container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Estiliza o header, agora com layout ajustado para logo à esquerda e abas abaixo */
+/* Estiliza o header com layout ajustado */
 .header {
-    display: flex; /* Usa flexbox */
-    flex-direction: column; /* Alinha logo e navegação verticalmente */
-    align-items: flex-start; /* Alinha à esquerda */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px 0;
     border-bottom: 1px solid #333;
     margin-bottom: 30px;
 }
 
-/* Estiliza o contêiner do logo, alinhando ícone, imagem e texto */
+/* Estiliza o contêiner do logo */
 .logo {
-    display: flex; /* Usa flexbox para alinhar ícone, imagem e texto */
-    align-items: center; /* Alinha verticalmente */
-    gap: 12px; /* Espaço entre ícone, imagem e texto */
-    margin-bottom: 15px; /* Espaço entre logo e abas */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
 }
 
-/* Estiliza o ícone dentro do logo (no HTML, <i class="fas fa-spade">) */
 .logo i {
     font-size: 32px;
     color: #d4af37;
 }
 
-/* Estiliza a imagem do logo (no HTML, <img src="./assets/fotos/logobranca.png">) */
 .logo img {
-    height: 80px; /* Altura ajustada para a imagem */
-    width: auto; /* Mantém a proporção da imagem */
+    height: 80px;
+    width: auto;
 }
 
-/* Estiliza o título do logo (no HTML, <h1>𝑷𝒐𝒌𝒆𝒓</h1>) */
 .logo h1 {
     font-size: 50px;
     font-weight: 700;
@@ -64,18 +59,17 @@ body {
     color: transparent;
 }
 
-/* Estiliza a navegação de abas (no HTML, <nav class="nav-tabs">), agora abaixo do logo */
+/* Estiliza a navegação de abas */
 .nav-tabs {
-    display: flex; /* Usa flexbox para alinhar os botões */
-    gap: 8px; /* Espaço entre os botões */
-    width: 100%; /* Ocupa a largura total do header */
+    display: flex;
+    gap: 8px;
+    width: 100%;
 }
+
 .home-icon {
-  font-size: 24px; /* Ajuste o tamanho conforme desejar */
+    font-size: 24px;
 }
 
-
-/* Estiliza cada aba de navegação (no HTML, <button class="nav-tab">) */
 .nav-tab {
     padding: 12px 24px;
     background: #2a2a2a;
@@ -87,7 +81,6 @@ body {
     font-weight: 500;
 }
 
-/* Efeito hover para as abas de navegação */
 .nav-tab:hover {
     background: #3a3a3a;
     border-color: #d4af37;
@@ -95,7 +88,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Estiliza a aba ativa (no HTML, <button class="nav-tab active">) */
 .nav-tab.active {
     background: linear-gradient(45deg, #0f7b3c, #15a049);
     border-color: #0f7b3c;
@@ -103,7 +95,7 @@ body {
     box-shadow: 0 4px 12px rgba(15, 123, 60, 0.3);
 }
 
-/* Define o layout principal com grid, dividindo em conteúdo e sidebar */
+/* Layout principal */
 .conteudo-principal {
     display: grid;
     grid-template-columns: 1fr 320px;
@@ -111,7 +103,7 @@ body {
     align-items: start;
 }
 
-/* Estiliza a seção do carrossel (no HTML, <section class="carousel-section">) */
+/* Estiliza a seção do carrossel */
 .carousel-section {
     background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
     border-radius: 16px;
@@ -122,20 +114,17 @@ body {
     position: relative;
 }
 
-/* Contêiner do carrossel (no HTML, <div class="carousel-container">) */
 .carousel-container {
     position: relative;
     height: 300px;
 }
 
-/* Contêiner interno do carrossel (no HTML, <div class="carousel">) */
 .carousel {
     height: 100%;
     position: relative;
     overflow: hidden;
 }
 
-/* Estiliza cada slide do carrossel (no HTML, <div class="carousel-slide">) */
 .carousel-slide {
     position: absolute;
     top: 0;
@@ -150,33 +139,28 @@ body {
     justify-content: center;
 }
 
-/* Estiliza o slide ativo (no HTML, <div class="carousel-slide active">) */
 .carousel-slide.active {
     opacity: 1;
 }
 
-/* Estiliza o conteúdo dentro de cada slide (no HTML, <div class="slide-content">) */
 .slide-content {
     text-align: center;
     padding: 40px;
     max-width: 600px;
 }
 
-/* Estiliza o título dentro do slide (no HTML, <h2> no .slide-content) */
 .slide-content h2 {
     font-size: 32px;
     margin-bottom: 16px;
     font-weight: 700;
 }
 
-/* Estiliza o parágrafo dentro do slide (no HTML, <p> no .slide-content) */
 .slide-content p {
     font-size: 18px;
     margin-bottom: 24px;
     opacity: 0.9;
 }
 
-/* Estiliza o botão primário (no HTML, <button class="btn-primary">) */
 .btn-primary {
     background: linear-gradient(45deg, #d4af37, #f4e4bc);
     color: #1a1a1a;
@@ -190,13 +174,11 @@ body {
     box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
-/* Efeito hover para o botão primário */
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Estiliza os botões do carrossel (no HTML, <button class="carousel-btn">) */
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -211,23 +193,19 @@ body {
     z-index: 10;
 }
 
-/* Efeito hover para os botões do carrossel */
 .carousel-btn:hover {
     background: rgba(0, 0, 0, 0.8);
     transform: translateY(-50%) scale(1.1);
 }
 
-/* Posiciona o botão anterior do carrossel (no HTML, <button class="carousel-btn prev">) */
 .carousel-btn.prev {
     left: 20px;
 }
 
-/* Posiciona o botão próximo do carrossel (no HTML, <button class="carousel-btn next">) */
 .carousel-btn.next {
     right: 20px;
 }
 
-/* Estiliza os indicadores do carrossel (no HTML, <div class="carousel-indicators">) */
 .carousel-indicators {
     position: absolute;
     bottom: 20px;
@@ -237,7 +215,6 @@ body {
     gap: 8px;
 }
 
-/* Estiliza cada indicador (no HTML, <span class="indicator">) */
 .indicator {
     width: 12px;
     height: 12px;
@@ -247,18 +224,16 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Estiliza o indicador ativo (no HTML, <span class="indicator active">) */
 .indicator.active {
     background: #d4af37;
     transform: scale(1.2);
 }
 
-/* Estiliza as seções de jogos (no HTML, <section class="section-jogos">) */
+/* Seções de jogos */
 .section-jogos {
     margin-bottom: 40px;
 }
 
-/* Estiliza o header da seção (no HTML, <div class="section-header">) */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -266,14 +241,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* Estiliza o título da seção (no HTML, <h3> no .section-header) */
 .section-header h3 {
     font-size: 24px;
     font-weight: 600;
     color: #ffffff;
 }
 
-/* Estiliza os botões de navegação da seção (no HTML, <button class="section-nav-btn">) */
 .section-nav-btn {
     background: #2a2a2a;
     border: 1px solid #404040;
@@ -285,14 +258,12 @@ body {
     margin-left: 8px;
 }
 
-/* Efeito hover para os botões de navegação da seção */
 .section-nav-btn:hover {
     background: #3a3a2a;
     border-color: #d4af37;
     color: #d4af37;
 }
 
-/* Estiliza a grade de jogos (no HTML, <div class="grid-jogos">) */
 .grid-jogos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -302,12 +273,10 @@ body {
     scrollbar-width: none;
 }
 
-/* Esconde a scrollbar em navegadores Webkit (Chrome, Safari) */
 .grid-jogos::-webkit-scrollbar {
     display: none;
 }
 
-/* Estiliza os cards de jogos (no HTML, <div class="card-jogos">) */
 .card-jogos {
     background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
     border-radius: 12px;
@@ -320,50 +289,42 @@ body {
     min-width: 280px;
 }
 
-/* Efeito hover para os cards de jogos */
 .card-jogos:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     border-color: #0f7b3c;
 }
 
-/* Estiliza cards em alta (no HTML, <div class="card-jogos trending">) */
 .card-jogos.trending {
     border-color: #d4af37;
     box-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
 }
 
-/* Efeito hover para cards em alta */
 .card-jogos.trending:hover {
     border-color: #f4e4bc;
     box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
 }
 
-/* Estiliza a área da imagem do jogo (no HTML, <div class="imagem-jogo">) */
 .imagem-jogo {
     text-align: center;
     margin-bottom: 16px;
 }
 
-/* Estiliza o ícone dentro da imagem do jogo (no HTML, <i> no .imagem-jogo) */
 .imagem-jogo i {
     font-size: 48px;
     color: #0f7b3c;
     transition: all 0.3s ease;
 }
 
-/* Efeito hover para o ícone dentro do card */
 .card-jogos:hover .imagem-jogo i {
     color: #15a049;
     transform: scale(1.1);
 }
 
-/* Estiliza o ícone em cards em alta */
 .card-jogos.trending .imagem-jogo i {
     color: #d4af37;
 }
 
-/* Estiliza as informações do jogo (no HTML, <div class="jogo-info">) */
 .jogo-info h4 {
     font-size: 18px;
     font-weight: 600;
@@ -371,26 +332,22 @@ body {
     color: #ffffff;
 }
 
-/* Estiliza os parágrafos das informações do jogo (no HTML, <p> no .jogo-info) */
 .jogo-info p {
     color: #cccccc;
     margin-bottom: 8px;
 }
 
-/* Estiliza o status do jogo (no HTML, <span class="jogo-status">) */
 .jogo-status {
     font-size: 12px;
     color: #888888;
     font-weight: 500;
 }
 
-/* Estiliza o status em alta (no HTML, <span class="jogo-status hot">) */
 .jogo-status.hot {
     color: #d4af37;
     font-weight: 600;
 }
 
-/* Estiliza o rótulo de casino (no HTML, <div class="casino-label">) */
 .casino-label {
     position: fixed;
     bottom: 30px;
@@ -407,7 +364,7 @@ body {
     z-index: 100;
 }
 
-/* Estiliza a sidebar (no HTML, <aside class="sidebar">) */
+/* Sidebar */
 .sidebar {
     background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
     border-radius: 16px;
@@ -418,7 +375,6 @@ body {
     top: 20px;
 }
 
-/* Estiliza a seção do perfil do usuário (no HTML, <div class="perfil-usuario">) */
 .perfil-usuario {
     text-align: center;
     margin-bottom: 24px;
@@ -426,7 +382,6 @@ body {
     border-bottom: 1px solid #404040;
 }
 
-/* Estiliza a foto do usuário (no HTML, <div class="foto-usuario">) */
 .foto-usuario {
     width: 80px;
     height: 80px;
@@ -439,13 +394,11 @@ body {
     box-shadow: 0 4px 16px rgba(15, 123, 60, 0.3);
 }
 
-/* Estiliza o ícone dentro da foto do usuário (no HTML, <i> no .foto-usuario) */
 .foto-usuario i {
     font-size: 32px;
     color: white;
 }
 
-/* Estiliza as informações do usuário (no HTML, <div class="info-usuario">) */
 .info-usuario h4 {
     font-size: 20px;
     font-weight: 600;
@@ -453,14 +406,12 @@ body {
     color: #ffffff;
 }
 
-/* Estiliza as estatísticas do usuário (no HTML, <div class="stats-usuario">) */
 .stats-usuario {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* Estiliza cada item de estatística (no HTML, <div class="stat-item">) */
 .stat-item {
     display: flex;
     align-items: center;
@@ -468,14 +419,12 @@ body {
     padding: 8px 0;
 }
 
-/* Estiliza o ícone dentro do item de estatística (no HTML, <i> no .stat-item) */
 .stat-item i {
     color: #d4af37;
     font-size: 16px;
     width: 20px;
 }
 
-/* Estiliza o texto descritivo do item de estatística (no HTML, <span> no .stat-item) */
 .stat-item span {
     flex: 1;
     text-align: left;
@@ -483,21 +432,18 @@ body {
     font-size: 14px;
 }
 
-/* Estiliza o valor do item de estatística (no HTML, <strong> no .stat-item) */
 .stat-item strong {
     color: #ffffff;
     font-weight: 600;
     font-size: 14px;
 }
 
-/* Estiliza as ações rápidas (no HTML, <div class="quick-actions">) */
 .quick-actions {
     display: flex;
     gap: 12px;
     margin-bottom: 24px;
 }
 
-/* Estiliza os botões de ação (no HTML, <button class="action-btn">) */
 .action-btn {
     flex: 1;
     padding: 12px;
@@ -512,31 +458,31 @@ body {
     gap: 8px;
 }
 
-/* Estiliza o botão de depósito (no HTML, <button class="action-btn deposit">) */
+.action-btn.login {
+    background: linear-gradient(45deg, #0f7b3c, #15a049);
+    color: white;
+}
+
 .action-btn.deposit {
     background: linear-gradient(45deg, #0f7b3c, #15a049);
     color: white;
 }
 
-/* Estiliza o botão de saque (no HTML, <button class="action-btn withdraw">) */
 .action-btn.withdraw {
     background: linear-gradient(45deg, #d4af37, #f4e4bc);
     color: #1a1a1a;
 }
 
-/* Efeito hover para os botões de ação */
 .action-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Estiliza a seção de conquistas (no HTML, <div class="conquistas">) */
 .conquistas {
     padding-top: 24px;
     border-top: 1px solid #404040;
 }
 
-/* Estiliza o título das conquistas (no HTML, <h4> no .conquistas) */
 .conquistas h4 {
     font-size: 16px;
     font-weight: 600;
@@ -544,7 +490,6 @@ body {
     color: #ffffff;
 }
 
-/* Estiliza cada item de conquista (no HTML, <div class="item-conquistas">) */
 .item-conquistas {
     display: flex;
     align-items: center;
@@ -553,7 +498,6 @@ body {
     color: #cccccc;
 }
 
-/* Estiliza o ícone dentro do item de conquista (no HTML, <i> no .item-conquistas) */
 .item-conquistas i {
     color: #d4af37;
     font-size: 16px;
