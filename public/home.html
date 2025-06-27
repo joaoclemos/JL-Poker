@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,32 @@
     <link rel="stylesheet" href="/public/assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
             <div class="logo">
                 <i class="fas fa-spade"></i>
-                <img src="./assets/fotos/logobranca.png" alt="logo" class="logo">
+                <img src="./assets/fotos/logobranca.png" alt="logo" class="logo-img">
                 <h1>𝑷𝒐𝒌𝒆𝒓</h1>
             </div>
             <nav class="nav-tabs">
-                <button class="nav-tab active" data-mode="1">Modo 1</button>
-                <button class="nav-tab" data-mode="2">Modo 2</button>
-                <button class="nav-tab" data-mode="3">Modo 3</button>
-                <button class="nav-tab" data-mode="4">4</button>
-                <button class="nav-tab" data-mode="5">5</button>
+                <button class="nav-tab active" data-mode="1">
+                    <i class="fas fa-home home-icon"></i>
+                </button>
+                <button class="nav-tab" data-mode="2">Hold'em</button>
+                <button class="nav-tab" data-mode="3">Sit & Go</button>
+                <button class="nav-tab" data-mode="4">PLO</button>
+                <button class="nav-tab" data-mode="5">Omaha Hi-Lo</button>
+                <button class="nav-tab" data-mode="6">Short Deck</button>
+                <button class="nav-tab" data-mode="7">Razz</button>
+                <button class="nav-tab" data-mode="8">All-in or Fold</button>
+                <button class="nav-tab" data-mode="9">Stud</button>
+                <button class="nav-tab" data-mode="10">Horse</button>
+                <button class="nav-tab" data-mode="11">Bomb Pot</button>
+                <button class="nav-tab" data-mode="12">Torneio</button>
+                <button class="nav-tab" data-mode="13">Play Money</button>
             </nav>
         </header>
 
@@ -110,16 +122,6 @@
                                 <span class="jogo-status">Última sessão: 1d</span>
                             </div>
                         </div>
-                        <div class="card-jogos">
-                            <div class="imagem-jogo">
-                                <i class="fas fa-club"></i>
-                            </div>
-                            <div class="jogo-info">
-                                <h4>Five Card Draw</h4>
-                                <p>Mesa: VIP</p>
-                                <span class="jogo-status">Última sessão: 2d</span>
-                            </div>
-                        </div>
                     </div>
                 </section>
 
@@ -165,6 +167,51 @@
                                 <h4>Cash Game Pro</h4>
                                 <p>Stakes altos</p>
                                 <span class="jogo-status hot">💎 Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-jogos">
+                    <div class="section-header">
+                        <h3>Treino</h3>
+                        <div>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="section-nav-btn">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid-jogos" id="jogos-recentes">
+                        <div class="card-jogos">
+                            <div class="imagem-jogo">
+                                <i class="fas fa-cards-blank"></i>
+                            </div>
+                            <div class="jogo-info">
+                                <h4>Play Money</h4>
+                                <p>Dinheiro falso</p>
+                                <span class="jogo-status">Última sessão: 2h</span>
+                            </div>
+                        </div>
+                        <div class="card-jogos">
+                            <div class="imagem-jogo">
+                                <i class="fas fa-diamond"></i>
+                            </div>
+                            <div class="jogo-info">
+                                <h4>GTO training</h4>
+                                <p>Teste modelo GTO</p>
+                                <span class="jogo-status">Última sessão: 4h</span>
+                            </div>
+                        </div>
+                        <div class="card-jogos">
+                            <div class="imagem-jogo">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="jogo-info">
+                                <h4>Regras</h4>
+                                <p>Regras dos jogos</p>
+                                <span class="jogo-status">Última sessão: 140d</span>
                             </div>
                         </div>
                     </div>
@@ -238,4 +285,5 @@
 
     <script src="/./public/assets/js/app.js"></script>
 </body>
+
 </html>
