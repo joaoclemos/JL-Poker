@@ -1,6 +1,11 @@
+// Verificar se o usuário está logado
+if (!localStorage.getItem('isLoggedIn')) {
+    window.location.href = '/public/assets/html/login.html';
+}
+
 // Simula dados de usuário (futuro: carregar de JSON ou backend)
 let userData = {
-    name: "João",
+    name: localStorage.getItem('username') || "João",
     money: 15420.50,
     coins: 1200,
     tickets: 5,
@@ -46,6 +51,8 @@ function updateRecentGames() {
 
 // Função de logout
 function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
     alert('Logout realizado com sucesso! Redirecionando para a página de login...');
     window.location.href = '/public/assets/html/login.html';
 }

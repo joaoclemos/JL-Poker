@@ -3,6 +3,7 @@
         {
             "id": 1,
             "name": "João",
+            "password": "123456",
             "money": 15420.50,
             "coins": 1200,
             "tickets": 5,
@@ -16,6 +17,7 @@
         {
             "id": 2,
             "name": "Maria",
+            "password": "abcdef",
             "money": 8500.75,
             "coins": 500,
             "tickets": 2,

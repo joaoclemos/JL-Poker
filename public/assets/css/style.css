@@ -20,13 +20,15 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
+    z-index: 1; /* Garante que o contêiner não interfira */
 }
 
 /* Logout Button */
 .logout-container {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px; /* Garantido que fique à direita */
+    z-index: 1000; /* Prioridade máxima para sobrepor outros elementos */
 }
 
 .logout-btn {
@@ -56,6 +58,8 @@ body {
     padding: 20px 0;
     border-bottom: 1px solid #333;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 10; /* Garante que o header não bloqueie */
 }
 
 /* Estiliza o contêiner do logo */
@@ -128,6 +132,8 @@ body {
     grid-template-columns: 1fr 320px;
     gap: 30px;
     align-items: start;
+    position: relative;
+    z-index: 5;
 }
 
 /* Estiliza a seção do carrossel */
@@ -139,6 +145,7 @@ body {
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     position: relative;
+    z-index: 1;
 }
 
 .carousel-container {

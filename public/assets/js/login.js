@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const forgotPassword = document.getElementById('forgot-password');
     const registerLink = document.getElementById('register-link');
 
+    let users = [];
+
+    // Carregar usuários do db.json
+    fetch('/db.json')
+        .then(response => {
+            if (!response.ok) throw new Error('Erro ao carregar db.json');
+            return response.json();
+        })
+        .then(data => {
+            users = data.users;
+        })
+        .catch(error => {
+            console.error('Erro ao carregar db.json:', error);
+            alert('Erro ao carregar dados de login. Tente novamente mais tarde.');
+        });
+
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         const username = document.getElementById('username').value;
@@ -13,9 +29,20 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Simulação de login bem-sucedido
-        alert('Login bem-sucedido! Redirecionando...');
-        window.location.href = '/public/home.html';
+        // Verificar apenas após o carregamento dos usuários
+        if (users.length > 0) {
+            const user = users.find(u => u.name === username && u.password === password);
+            if (user) {
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', username);
+                alert('Login bem-sucedido! Redirecionando...');
+                window.location.href = '/public/home.html';
+            } else {
+                alert('Usuário ou senha incorretos.');
+            }
+        } else {
+            alert('Dados de login não carregados. Verifique sua conexão ou reinicie o servidor.');
+        }
     });
 
     forgotPassword.addEventListener('click', function(event) {
@@ -25,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     registerLink.addEventListener('click', function(event) {
         event.preventDefault();
-        alert('Redirecionando para a página de registro...');
-        // Aqui você pode redirecionar para /register.html ou outra página de registro
         window.location.href = '/public/assets/html/registro.html';
     });
 });
